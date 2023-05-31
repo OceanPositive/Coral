@@ -1,0 +1,31 @@
+// The MIT License (MIT)
+//
+// https://github.com/DevYeom/Coral
+
+import SwiftUI
+import {{ name }}
+
+struct {{ name }}ExampleView: View {
+
+    var body: some View {
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!")
+        }
+        .padding()
+        .onAppear {
+            {{ name }}.hello()
+        }
+    }
+
+}
+
+struct {{ name }}ExampleView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        {{ name }}ExampleView()
+    }
+
+}

@@ -1,0 +1,14 @@
+// The MIT License (MIT)
+//
+// https://github.com/DevYeom/Coral
+
+import Foundation
+import {{ name }}Interface
+
+public struct {{ name }}: {{ name }}Type {
+
+    public static func hello() {
+        print("Hello {{ name }}")
+    }
+
+}

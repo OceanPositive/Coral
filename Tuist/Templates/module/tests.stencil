@@ -1,0 +1,17 @@
+// The MIT License (MIT)
+//
+// https://github.com/DevYeom/Coral
+
+import Foundation
+import XCTest
+import {{ name }}
+import {{ name }}Testing
+
+final class {{ name }}Tests: XCTestCase {
+
+    func test_example() {
+        {{ name }}Mock.hello()
+        XCTAssertEqual("{{ name }}", "{{ name }}")
+    }
+
+}
