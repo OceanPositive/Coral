@@ -1,5 +1,8 @@
 default: project
 
+install:
+	@./scripts/install.sh
+
 clean:
 	@tuist clean
 
@@ -17,7 +20,7 @@ project: fetch
 project-no-open: fetch
 	@tuist generate --no-open
 
-ci: project-no-open
+ci: install project-no-open
 	@bundle exec fastlane ci
 
 module:
@@ -28,4 +31,4 @@ else
 	@echo "👉 make module name=Foo"
 endif
 
-.PHONY: edit fetch project module clean ci
+.PHONY: install clean edit fetch project project-no-open ci module
