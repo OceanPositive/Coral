@@ -2,10 +2,10 @@
 //
 // https://github.com/DevYeom/Coral
 
-import Foundation
-import XCTest
 import CoralKit
 import CoralKitTesting
+import Foundation
+import XCTest
 
 final class CoralKitTests: XCTestCase {
 

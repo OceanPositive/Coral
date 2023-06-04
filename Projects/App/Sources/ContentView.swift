@@ -2,10 +2,10 @@
 //
 // https://github.com/DevYeom/Coral
 
-import SwiftUI
-import CoreData
 import CoralKit
 import CoralUI
+import CoreData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext

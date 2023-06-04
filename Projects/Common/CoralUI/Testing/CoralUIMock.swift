@@ -2,8 +2,8 @@
 //
 // https://github.com/DevYeom/Coral
 
-import Foundation
 import CoralUIInterface
+import Foundation
 
 public struct CoralUIMock: CoralUIType {
 

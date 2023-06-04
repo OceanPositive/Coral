@@ -2,8 +2,8 @@
 //
 // https://github.com/DevYeom/Coral
 
-import SwiftUI
 import CoralUI
+import SwiftUI
 
 struct CoralUIExampleView: View {
 

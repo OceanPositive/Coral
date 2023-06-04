@@ -2,8 +2,8 @@
 //
 // https://github.com/DevYeom/Coral
 
-import Foundation
 import CoralKitInterface
+import Foundation
 
 public struct CoralKit: CoralKitType {
 
