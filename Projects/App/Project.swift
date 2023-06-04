@@ -18,5 +18,7 @@ let project = Project.app(
     dependencies: [
         .common(.coralKit),
         .common(.coralUI),
+        .feature(.colorConverter),
+        .external(.oneWay),
     ]
 )
