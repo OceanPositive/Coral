@@ -6,7 +6,7 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.staticFramework(
-    name: "{{ name }}",
+    name: "ColorConverter",
     packages: [],
     baseSettings: [:],
     dependencies: [
@@ -14,5 +14,5 @@ let project = Project.staticFramework(
         .common(.coralUI),
         .external(.oneWay),
     ],
-    includeExample: {{ example }}
+    includeExample: true
 )

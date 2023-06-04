@@ -8,7 +8,7 @@ let dependencies = Dependencies(
     carthage: nil,
     swiftPackageManager: SwiftPackageManagerDependencies(
         [
-            .remote(url: "https://github.com/DevYeom/OneWay.git", requirement: .upToNextMajor(from: "0.1.0")),
+            .remote(url: "https://github.com/DevYeom/OneWay.git", requirement: .upToNextMajor(from: "1.0.0")),
         ],
         productTypes: [
             "OneWay": .framework,

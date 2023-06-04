@@ -11,6 +11,14 @@ public extension TargetDependency {
         case coralUI = "CoralUI"
     }
 
+    enum Feature: String {
+        case colorConverter = "ColorConverter"
+    }
+
+    enum External: String {
+        case oneWay = "OneWay"
+    }
+
 }
 
 public extension TargetDependency {
@@ -20,6 +28,17 @@ public extension TargetDependency {
             target: target.rawValue,
             path: .relativeToRoot("Projects/Common/\(target.rawValue)")
         )
+    }
+
+    static func feature(_ target: Feature) -> Self {
+        return .project(
+            target: target.rawValue,
+            path: .relativeToRoot("Projects/Features/\(target.rawValue)")
+        )
+    }
+
+    static func external(_ target: External) -> Self {
+        return .external(name: target.rawValue)
     }
 
 }
