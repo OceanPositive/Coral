@@ -15,12 +15,12 @@ function __fail {
     echo -e $RED$*$NC
 }
 
-ENV=$1
-
 # https://stackoverflow.com/a/246128
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 ROOT_DIR=$SCRIPT_DIR/..
 cd $ROOT_DIR
+
+ENV=$1
 
 if ! [ -x "$(command -v bundle)" ]; then
     __verbose "Installing bundler..."
@@ -44,6 +44,18 @@ if ! [ -x "$(command -v tuist)" ]; then
     __success "Tuist is installed."
 else
     __verbose "Tuist is already installed."
+fi
+
+if ! [ -x "$(command -v mockolo)" ]; then
+    if [ "$ENV" != "ci" ]; then
+        __verbose "Installing mockolo..."
+        brew install mockolo
+        __success "Mockolo is installed."
+    else
+        __verbose "It does not install mockolo in the ci environment."
+    fi
+else
+    __verbose "Mockolo is already installed."
 fi
 
 if ! [ -x "$(command -v swift-format)" ] ; then

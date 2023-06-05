@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// @mockable
 public protocol CoralKitType {
 
     static func hello()

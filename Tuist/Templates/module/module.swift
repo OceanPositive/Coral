@@ -14,6 +14,7 @@ let template = Template(
         .file(path: "Projects/\(name)/Sources/\(name).swift", templatePath: "sources.stencil"),
         .file(path: "Projects/\(name)/Interface/\(name)Type.swift", templatePath: "interface.stencil"),
         .file(path: "Projects/\(name)/Testing/\(name)Mock.swift", templatePath: "testing.stencil"),
+        .string(path: "Projects/\(name)/Testing/Generated/Mocks.swift", contents: "ReplaceMe"), // for mockolo
         .file(path: "Projects/\(name)/Tests/\(name)Tests.swift", templatePath: "tests.stencil"),
         .file(path: "Projects/\(name)/Resources/Assets.xcassets/Contents.json", templatePath: "contents_json.stencil"),
         .file(path: "Projects/\(name)/Example/Sources/\(name)ExampleApp.swift", templatePath: "example_app.stencil"),

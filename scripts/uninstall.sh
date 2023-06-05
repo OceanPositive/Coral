@@ -34,6 +34,12 @@ if [ -x "$(command -v tuist)" ]; then
     __success "Tuist is uninstalled."
 fi
 
+if [ -x "$(command -v mockolo)" ]; then
+    __verbose "Uninstalling mockolo..."
+    brew uninstall mockolo
+    __success "mockolo is uninstalled."
+fi
+
 if [ -x "$(command -v swift-format)" ]; then
     __verbose "Uninstalling swift-format..."
     rm -rf /usr/local/bin/swift-format

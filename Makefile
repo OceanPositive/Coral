@@ -25,8 +25,12 @@ project-no-open: fetch
 lint:
 # recursive
 	@swift-format lint -r Projects
-# ignore-unparsable-files, recursive, parallel
-	@swift-format format -i -r -p Projects 
+# in place, recursive, parallel
+	@swift-format format -irp Projects
+
+mocks:
+	@./scripts/mocking.sh
+	@make lint
 
 ci: env:=ci
 

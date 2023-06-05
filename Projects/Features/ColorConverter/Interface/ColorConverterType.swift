@@ -4,6 +4,7 @@
 
 import Foundation
 
+/// @mockable
 public protocol ColorConverterType {
 
     static func hello()
