@@ -20,6 +20,7 @@ let project = Project.app(
         .common(.coralUI),
         .feature(.colorConverter),
         .feature(.caseConverter),
+        .external(.dependencies),
         .external(.oneWay),
     ]
 )

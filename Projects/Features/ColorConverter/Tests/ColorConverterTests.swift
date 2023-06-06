@@ -10,7 +10,6 @@ import XCTest
 final class ColorConverterTests: XCTestCase {
 
     func test_example() {
-        ColorConverterMock.hello()
         XCTAssertEqual("ColorConverter", "ColorConverter")
     }
 

@@ -17,6 +17,7 @@ public extension TargetDependency {
     }
 
     enum External: String {
+        case dependencies = "Dependencies"
         case oneWay = "OneWay"
     }
 

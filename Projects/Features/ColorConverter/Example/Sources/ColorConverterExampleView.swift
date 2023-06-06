@@ -3,21 +3,16 @@
 // https://github.com/DevYeom/Coral
 
 import ColorConverter
+import ColorConverterInterface
+import Dependencies
 import SwiftUI
 
 struct ColorConverterExampleView: View {
 
+    @Dependency(\.colorConverterBuilder) var colorConverterBuilder
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-        .onAppear {
-            ColorConverter.hello()
-        }
+        colorConverterBuilder(ColorConverterDependency(text: "Live!!"))
     }
 
 }

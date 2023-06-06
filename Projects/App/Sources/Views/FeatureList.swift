@@ -3,13 +3,15 @@
 // https://github.com/DevYeom/Coral
 
 import CaseConverter
-import ColorConverter
+import ColorConverterInterface
 import CoralKit
+import Dependencies
 import SwiftUI
 
 struct FeatureList: View {
 
     @State private var selectedFeature: CoralFeature?
+    @Dependency(\.colorConverterBuilder) var colorConverterBuilder
 
     var title: String {
         guard let selectedFeature else {
@@ -37,7 +39,9 @@ struct FeatureList: View {
     private func makeFeatureScreen(_ feature: CoralFeature) -> some View {
         switch feature {
         case .colorConverter:
-            ColorConverterView()
+            colorConverterBuilder(
+                ColorConverterDependency(text: "TODO")
+            )
 
         case .caseConverter:
             CaseConverterScreen(
