@@ -7,7 +7,7 @@ import ProjectDescription
 extension DeploymentTarget {
 
     public static let app: Self = .macOS(
-        targetVersion: "12.0"
+        targetVersion: "13.0"
     )
 
 }
