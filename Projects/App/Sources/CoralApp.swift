@@ -15,6 +15,10 @@ struct CoralApp: App {
         .commands {
             CoralCommands()
         }
+
+        Settings {
+            CoralSettings()
+        }
     }
 
 }
