@@ -18,7 +18,7 @@ let template = Template(
         .file(path: "Projects/\(name)/Tests/\(name)Tests.swift", templatePath: "tests.stencil"),
         .file(path: "Projects/\(name)/Resources/Assets.xcassets/Contents.json", templatePath: "contents_json.stencil"),
         .file(path: "Projects/\(name)/Example/Sources/\(name)ExampleApp.swift", templatePath: "example_app.stencil"),
-        .file(path: "Projects/\(name)/Example/Sources/ContentView.swift", templatePath: "example_view.stencil"),
+        .file(path: "Projects/\(name)/Example/Sources/\(name)ExampleView.swift", templatePath: "example_view.stencil"),
         .file(path: "Projects/\(name)/Example/Resources/Assets.xcassets/Contents.json", templatePath: "contents_json.stencil"),
     ]
 )
