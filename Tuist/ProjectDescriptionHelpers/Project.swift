@@ -44,10 +44,12 @@ public extension Project {
         )
     }
 
-    static func dynamicFramework(
+    static func dynamic(
         name: String,
         packages: [Package],
         baseSettings: SettingsDictionary,
+        sources: SourceFilesList? = ["Sources/**"],
+        resources: ResourceFileElements? = ["Resources/**"],
         dependencies: [TargetDependency],
         includeExample: Bool
     ) -> Self {
@@ -60,15 +62,19 @@ public extension Project {
                 defaultSettings: .recommended
             ),
             product: .framework,
+            sources: sources,
+            resources: resources,
             dependencies: dependencies,
             includeExample: includeExample
         )
     }
 
-    static func staticFramework(
+    static func `static`(
         name: String,
         packages: [Package],
         baseSettings: SettingsDictionary,
+        sources: SourceFilesList? = ["Sources/**"],
+        resources: ResourceFileElements? = nil,
         dependencies: [TargetDependency],
         includeExample: Bool
     ) -> Self {
@@ -80,7 +86,9 @@ public extension Project {
                 configurations: .moduleConfiguration(name),
                 defaultSettings: .recommended
             ),
-            product: .staticFramework,
+            product: resources == nil ? .staticLibrary : .staticFramework,
+            sources: sources,
+            resources: resources,
             dependencies: dependencies,
             includeExample: includeExample
         )
@@ -91,6 +99,8 @@ public extension Project {
         packages: [Package],
         settings: Settings?,
         product: Product,
+        sources: SourceFilesList?,
+        resources: ResourceFileElements?,
         dependencies: [TargetDependency],
         includeExample: Bool
     ) -> Self {
@@ -103,6 +113,8 @@ public extension Project {
             targets: .moduleTargets(
                 name: name,
                 product: product,
+                sources: sources,
+                resources: resources,
                 dependencies: dependencies,
                 includeExample: includeExample
             ),

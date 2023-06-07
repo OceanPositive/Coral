@@ -26,6 +26,8 @@ extension Array where Element == Target {
     static func moduleTargets(
         name: String,
         product: Product,
+        sources: SourceFilesList?,
+        resources: ResourceFileElements?,
         dependencies: [TargetDependency],
         includeExample: Bool
     ) -> [Target] {
@@ -33,6 +35,8 @@ extension Array where Element == Target {
             .module(
                 name: name,
                 product: product,
+                sources: sources,
+                resources: resources,
                 dependencies: dependencies
             ),
             .interface(name: name),
@@ -118,6 +122,8 @@ extension Target {
     fileprivate static func module(
         name: String,
         product: Product,
+        sources: SourceFilesList?,
+        resources: ResourceFileElements?,
         dependencies: [TargetDependency]
     ) -> Self {
         Target(
@@ -128,8 +134,8 @@ extension Target {
             bundleId: Coral.bundleId(name),
             deploymentTarget: .app,
             infoPlist: .default,
-            sources: ["Sources/**"],
-            resources: ["Resources/**"],
+            sources: sources,
+            resources: resources,
             copyFiles: nil,
             headers: nil,
             entitlements: nil,

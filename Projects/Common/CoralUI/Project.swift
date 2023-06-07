@@ -5,7 +5,7 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
-let project = Project.dynamicFramework(
+let project = Project.dynamic(
     name: "CoralUI",
     packages: [],
     baseSettings: [:],
