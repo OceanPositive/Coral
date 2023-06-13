@@ -53,10 +53,10 @@ final class CaseConverterTypeTests: XCTestCase {
 
         do {
             let input =
-            """
-            camelCase
-            onMultiline
-            """
+                """
+                camelCase
+                onMultiline
+                """
             let result = CaseConverterType.camel.convert(input)
             XCTAssertEqual(
                 result,
@@ -69,10 +69,10 @@ final class CaseConverterTypeTests: XCTestCase {
 
         do {
             let input =
-            """
-            camel_case
-            on_multiline
-            """
+                """
+                camel_case
+                on_multiline
+                """
             let result = CaseConverterType.camel.convert(input)
             XCTAssertEqual(
                 result,
@@ -129,10 +129,10 @@ final class CaseConverterTypeTests: XCTestCase {
 
         do {
             let input =
-            """
-            camelCase
-            onMultiline
-            """
+                """
+                camelCase
+                onMultiline
+                """
             let result = CaseConverterType.snake.convert(input)
             XCTAssertEqual(
                 result,
