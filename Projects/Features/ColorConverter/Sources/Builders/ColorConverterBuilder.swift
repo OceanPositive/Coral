@@ -15,7 +15,10 @@ public struct ColorConverterBuilder: Buildable {
     ) -> ColorConverterScreen {
         let way = ColorConverterWay(
             initialState: .init(
-                test: "\(dependency.text) Hello World!"
+                sourceColor: .black,
+                hex: HexColor(value: "#000000"),
+                cmyk: CMYKColor(cyan: .zero, magenta: .zero, yellow: .zero, key: 1.0),
+                hsb: HSBColor(hue: .zero, saturation: .zero, brightness: .zero)
             )
         )
         return ColorConverterScreen(way: way)
