@@ -5,10 +5,9 @@
 import ColorConverterInterface
 import Foundation
 
-extension CMYKColor: ColorConvertible {
+extension CMYKColor: ColorType {
 
-    /// https://github.com/bennyguitar/Colours
-    public var toRGB: RGBColor {
+    public var sourceColor: RGBColor {
         let transform: (Double) -> Double = { value in
             1.0 - (value * (1.0 - key) + key)
         }
@@ -17,18 +16,6 @@ extension CMYKColor: ColorConvertible {
             green: transform(magenta),
             blue: transform(yellow)
         )
-    }
-
-    public var toHex: HexColor {
-        toRGB.toHex
-    }
-
-    public var toCMYK: CMYKColor {
-        self
-    }
-
-    public var toHSB: HSBColor {
-        toRGB.toHSB
     }
 
 }

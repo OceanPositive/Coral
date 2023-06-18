@@ -6,18 +6,6 @@ import AppKit
 import ColorConverterInterface
 import Foundation
 
-extension ColorConverterInterface.RGBColor {
-
-    static var black: ColorConverterInterface.RGBColor {
-        RGBColor(
-            red: .zero,
-            green: .zero,
-            blue: .zero
-        )
-    }
-
-}
-
 extension ColorConverterInterface.RGBColor: ColorConvertible {
 
     public var toRGB: ColorConverterInterface.RGBColor {

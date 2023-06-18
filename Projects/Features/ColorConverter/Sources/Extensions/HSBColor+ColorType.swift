@@ -6,9 +6,9 @@ import AppKit
 import ColorConverterInterface
 import Foundation
 
-extension HSBColor: ColorConvertible {
+extension HSBColor: ColorType {
 
-    public var toRGB: ColorConverterInterface.RGBColor {
+    public var sourceColor: ColorConverterInterface.RGBColor {
         let nsColor = NSColor(
             hue: hue,
             saturation: saturation,
@@ -25,18 +25,6 @@ extension HSBColor: ColorConvertible {
             green: green,
             blue: blue
         )
-    }
-
-    public var toHex: HexColor {
-        toRGB.toHex
-    }
-
-    public var toCMYK: CMYKColor {
-        toRGB.toCMYK
-    }
-
-    public var toHSB: HSBColor {
-        self
     }
 
 }

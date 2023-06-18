@@ -12,7 +12,7 @@ extension CMYKColor: Validatable {
             && Double.zero ... 1.0 ~= magenta
             && Double.zero ... 1.0 ~= yellow
             && Double.zero ... 1.0 ~= key
-            && toRGB.isValid
+            && sourceColor.isValid
     }
 
 }

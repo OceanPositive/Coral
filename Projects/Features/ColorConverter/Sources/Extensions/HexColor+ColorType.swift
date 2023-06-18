@@ -5,10 +5,10 @@
 import ColorConverterInterface
 import Foundation
 
-extension HexColor: ColorConvertible {
+extension HexColor: ColorType {
 
     /// https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor
-    public var toRGB: RGBColor {
+    public var sourceColor: RGBColor {
         let startIndex = value.index(value.startIndex, offsetBy: 1)
         let hexColor = String(value[startIndex...])
         let scanner = Scanner(string: hexColor)
@@ -24,18 +24,6 @@ extension HexColor: ColorConvertible {
         }
         assertionFailure("The input for hex to rgb conversion is incorrect: \(value)")
         return .black
-    }
-
-    public var toHex: HexColor {
-        self
-    }
-
-    public var toCMYK: CMYKColor {
-        toRGB.toCMYK
-    }
-
-    public var toHSB: HSBColor {
-        toRGB.toHSB
     }
 
 }

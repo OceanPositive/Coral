@@ -11,7 +11,7 @@ extension HSBColor: Validatable {
         Double.zero ... 1.0 ~= hue
             && Double.zero ... 1.0 ~= saturation
             && Double.zero ... 1.0 ~= brightness
-            && toRGB.isValid
+            && sourceColor.isValid
     }
 
 }

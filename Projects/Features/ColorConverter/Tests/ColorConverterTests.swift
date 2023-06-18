@@ -101,28 +101,28 @@ final class ColorConverterTests: XCTestCase {
     func test_hex_to_rgb() {
         do {
             let hex = HexColor(value: "#000000")
-            let rgb = hex.toRGB
+            let rgb = hex.sourceColor
             let expected = RGBColor(red: .zero, green: .zero, blue: .zero)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hex = HexColor(value: "#FFFFFF")
-            let rgb = hex.toRGB
+            let rgb = hex.sourceColor
             let expected = RGBColor(red: 1.0, green: 1.0, blue: 1.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hex = HexColor(value: "#7A7EE6")
-            let rgb = hex.toRGB
+            let rgb = hex.sourceColor
             let expected = RGBColor(red: 122.0 / 255.0, green: 126.0 / 255.0, blue: 230.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hex = HexColor(value: "#755446")
-            let rgb = hex.toRGB
+            let rgb = hex.sourceColor
             let expected = RGBColor(red: 117.0 / 255.0, green: 84.0 / 255.0, blue: 70.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
@@ -131,28 +131,28 @@ final class ColorConverterTests: XCTestCase {
     func test_cmyk_to_rgb() {
         do {
             let cmyk = CMYKColor(cyan: .zero, magenta: .zero, yellow: .zero, key: 1.0)
-            let rgb = cmyk.toRGB
+            let rgb = cmyk.sourceColor
             let expected = RGBColor(red: .zero, green: .zero, blue: .zero)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let cmyk = CMYKColor(cyan: .zero, magenta: .zero, yellow: .zero, key: .zero)
-            let rgb = cmyk.toRGB
+            let rgb = cmyk.sourceColor
             let expected = RGBColor(red: 1.0, green: 1.0, blue: 1.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let cmyk = CMYKColor(cyan: 0.47, magenta: 0.45, yellow: .zero, key: 0.10)
-            let rgb = cmyk.toRGB
+            let rgb = cmyk.sourceColor
             let expected = RGBColor(red: 122.0 / 255.0, green: 126.0 / 255.0, blue: 230.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let cmyk = CMYKColor(cyan: .zero, magenta: 0.28, yellow: 0.40, key: 0.54)
-            let rgb = cmyk.toRGB
+            let rgb = cmyk.sourceColor
             let expected = RGBColor(red: 117.0 / 255.0, green: 84.0 / 255.0, blue: 70.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
@@ -161,28 +161,28 @@ final class ColorConverterTests: XCTestCase {
     func test_hsb_to_rgb() {
         do {
             let hsb = HSBColor(hue: .zero, saturation: .zero, brightness: .zero)
-            let rgb = hsb.toRGB
+            let rgb = hsb.sourceColor
             let expected = RGBColor(red: .zero, green: .zero, blue: .zero)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hsb = HSBColor(hue: .zero, saturation: .zero, brightness: 1.0)
-            let rgb = hsb.toRGB
+            let rgb = hsb.sourceColor
             let expected = RGBColor(red: 1.0, green: 1.0, blue: 1.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hsb = HSBColor(hue: 0.66, saturation: 0.47, brightness: 0.90)
-            let rgb = hsb.toRGB
+            let rgb = hsb.sourceColor
             let expected = RGBColor(red: 122.0 / 255.0, green: 126.0 / 255.0, blue: 230.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
 
         do {
             let hsb = HSBColor(hue: 0.05, saturation: 0.40, brightness: 0.46)
-            let rgb = hsb.toRGB
+            let rgb = hsb.sourceColor
             let expected = RGBColor(red: 117.0 / 255.0, green: 84.0 / 255.0, blue: 70.0 / 255.0)
             XCTAssertEqual(rgb, expected)
         }
