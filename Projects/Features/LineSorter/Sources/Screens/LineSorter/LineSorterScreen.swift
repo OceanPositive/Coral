@@ -66,10 +66,7 @@ public struct LineSorterScreen: View {
             "Order",
             selection: Binding<OrderType>(
                 get: { way.state.orderType },
-                set: {
-                    print($0)
-                    way.send(.updateOrderType(type: $0))
-                }
+                set: { way.send(.updateOrderType(type: $0)) }
             )
         ) {
             ForEach(OrderType.allCases) {
