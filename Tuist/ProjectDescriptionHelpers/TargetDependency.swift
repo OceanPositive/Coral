@@ -15,6 +15,7 @@ public extension TargetDependency {
         case colorConverter = "ColorConverter"
         case caseConverter = "CaseConverter"
         case lineSorter = "LineSorter"
+        case jsonFormatter = "JSONFormatter"
     }
 
     enum External: String {

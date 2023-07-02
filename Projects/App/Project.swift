@@ -21,6 +21,7 @@ let project = Project.app(
         .feature(.colorConverter),
         .feature(.caseConverter),
         .feature(.lineSorter),
+        .feature(.jsonFormatter),
         .external(.dependencies),
         .external(.oneWay),
     ]
