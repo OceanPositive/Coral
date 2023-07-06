@@ -7,6 +7,8 @@ import ColorConverterInterface
 import CoralKit
 import Dependencies
 import LineSorterInterface
+import MarkdownPreview
+import MarkdownPreviewInterface
 import SwiftUI
 
 struct FeatureList: View {
@@ -54,11 +56,6 @@ struct FeatureList: View {
     @ViewBuilder
     private func makeFeatureScreen(_ feature: CoralFeature) -> some View {
         switch feature {
-        case .colorConverter:
-            colorConverterBuilder(
-                ColorConverterDependency(text: "TODO")
-            )
-
         case .caseConverter:
             CaseConverterScreen(
                 way: .init(
@@ -66,10 +63,18 @@ struct FeatureList: View {
                 )
             )
 
+        case .colorConverter:
+            colorConverterBuilder(
+                ColorConverterDependency(text: "TODO")
+            )
+
         case .lineSorter:
             lineSorterBuilder(
                 LineSorterDependency()
             )
+
+        case .markdownPreview:
+            EmptyView()
         }
     }
 

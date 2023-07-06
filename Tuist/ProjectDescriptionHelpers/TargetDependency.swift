@@ -12,10 +12,11 @@ public extension TargetDependency {
     }
 
     enum Feature: String {
-        case colorConverter = "ColorConverter"
         case caseConverter = "CaseConverter"
-        case lineSorter = "LineSorter"
+        case colorConverter = "ColorConverter"
         case jsonFormatter = "JSONFormatter"
+        case lineSorter = "LineSorter"
+        case markdownPreview = "MarkdownPreview"
     }
 
     enum External: String {
