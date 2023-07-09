@@ -1,7 +1,7 @@
 public enum Mocks {
-    
+
     public enum Import {
-        
+
         public static let input: String =
             """
             import CoralKit
@@ -51,11 +51,11 @@ public enum Mocks {
             import ABCD
             import zyx
             """
-        
+
     }
 
     public enum Number {
-        
+
         public static let input: String =
             """
             Prefix-123
