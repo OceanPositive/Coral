@@ -2,14 +2,15 @@
 //
 // https://github.com/DevYeom/Coral
 
-import ColorConverter
+import ColorConverterContainer
 import ColorConverterInterface
-import Dependencies
+import Factory
 import SwiftUI
 
 struct ColorConverterExampleView: View {
 
-    @Dependency(\.colorConverterBuilder) var colorConverterBuilder
+    @Injected(\ColorConverterContainer.colorConverterBuilder)
+    private var colorConverterBuilder
 
     var body: some View {
         colorConverterBuilder(ColorConverterDependency(text: "Live!!"))

@@ -2,7 +2,9 @@
 //
 // https://github.com/DevYeom/Coral
 
-import CaseConverter
+import CaseConverterContainer
+import CaseConverterInterface
+import Factory
 import SwiftUI
 
 struct CaseConverterExampleView: View {
@@ -15,9 +17,6 @@ struct CaseConverterExampleView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            CaseConverter.hello()
-        }
     }
 
 }

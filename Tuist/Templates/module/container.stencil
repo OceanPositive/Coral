@@ -1,0 +1,19 @@
+// The MIT License (MIT)
+//
+// https://github.com/DevYeom/Coral
+
+import Factory
+import Foundation
+import {{ name }}
+import {{ name }}Interface
+
+public final class {{ name }}Container: SharedContainer {
+
+    public static let shared = {{ name }}Container()
+    public let manager = ContainerManager()
+
+}
+
+extension {{ name }}Container {
+
+}

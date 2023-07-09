@@ -6,8 +6,8 @@ import Foundation
 
 enum CoralFeature: CaseIterable, Identifiable {
 
-    case colorConverter
     case caseConverter
+    case colorConverter
     case lineSorter
     case markdownPreview
 
@@ -15,8 +15,8 @@ enum CoralFeature: CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .colorConverter: return "🎨 Color Converter"
         case .caseConverter: return "🐪 Case Converter"
+        case .colorConverter: return "🎨 Color Converter"
         case .lineSorter: return "🏛️ Line Sorter"
         case .markdownPreview: return "🔬 Markdown Preview"
         }

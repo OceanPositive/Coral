@@ -5,7 +5,7 @@
 import SwiftUI
 
 public struct EffectButtonStyle<Content: View>: ButtonStyle {
-    
+
     let effectView: Content
     @State private var showsEffect: Bool = false
 

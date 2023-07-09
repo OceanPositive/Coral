@@ -2,6 +2,7 @@
 //
 // https://github.com/DevYeom/Coral
 
+import CaseConverterInterface
 import XCTest
 
 @testable import CaseConverter

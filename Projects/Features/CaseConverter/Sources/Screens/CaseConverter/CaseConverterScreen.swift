@@ -3,6 +3,7 @@
 // https://github.com/DevYeom/Coral
 
 import AppKit
+import CaseConverterInterface
 import CoralUI
 import OneWay
 import SwiftUI

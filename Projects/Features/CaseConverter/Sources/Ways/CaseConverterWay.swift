@@ -2,6 +2,7 @@
 //
 // https://github.com/DevYeom/Coral
 
+import CaseConverterInterface
 import CoralKit
 import Foundation
 import OneWay
@@ -20,7 +21,11 @@ public final class CaseConverterWay: Way<CaseConverterWay.Action, CaseConverterW
         var output: String
         var converterType: CaseConverterType
 
-        public init(input: String, output: String, converterType: CaseConverterType) {
+        public init(
+            input: String,
+            output: String,
+            converterType: CaseConverterType
+        ) {
             self.input = input
             self.output = output
             self.converterType = converterType

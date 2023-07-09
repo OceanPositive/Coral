@@ -2,7 +2,9 @@
 //
 // https://github.com/DevYeom/Coral
 
-import MarkdownPreview
+import Factory
+import MarkdownPreviewContainer
+import MarkdownPreviewInterface
 import SwiftUI
 
 struct MarkdownPreviewExampleView: View {
@@ -15,9 +17,6 @@ struct MarkdownPreviewExampleView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            MarkdownPreview.hello()
-        }
     }
 
 }

@@ -2,10 +2,13 @@
 //
 // https://github.com/DevYeom/Coral
 
-import CaseConverter
+import CaseConverterContainer
+import CaseConverterInterface
+import ColorConverterContainer
 import ColorConverterInterface
 import CoralKit
-import Dependencies
+import Factory
+import LineSorterContainer
 import LineSorterInterface
 import MarkdownPreview
 import MarkdownPreviewInterface
@@ -13,8 +16,15 @@ import SwiftUI
 
 struct FeatureList: View {
 
-    @Dependency(\.colorConverterBuilder) var colorConverterBuilder
-    @Dependency(\.lineSorterBuilder) var lineSorterBuilder
+    @Injected(\CaseConverterContainer.caseConverterBuilder)
+    private var caseConverterBuilder
+
+    @Injected(\ColorConverterContainer.colorConverterBuilder)
+    private var colorConverterBuilder
+
+    @Injected(\LineSorterContainer.lineSorterBuilder)
+    private var lineSorterBuilder
+
     @StateObject private var way: FeatureListWay
 
     init(way: FeatureListWay) {
@@ -57,9 +67,11 @@ struct FeatureList: View {
     private func makeFeatureScreen(_ feature: CoralFeature) -> some View {
         switch feature {
         case .caseConverter:
-            CaseConverterScreen(
-                way: .init(
-                    initialState: .init(input: "", output: "", converterType: .camel)
+            caseConverterBuilder(
+                CaseConverterDependency(
+                    input: "",
+                    output: "",
+                    converterType: .camel
                 )
             )
 

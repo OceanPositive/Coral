@@ -2,8 +2,10 @@
 //
 // https://github.com/DevYeom/Coral
 
+import Factory
 import SwiftUI
-import {{ name }}
+import {{ name }}Container
+import {{ name }}Interface
 
 struct {{ name }}ExampleView: View {
 
@@ -15,9 +17,6 @@ struct {{ name }}ExampleView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            {{ name }}.hello()
-        }
     }
 
 }

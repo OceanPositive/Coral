@@ -2,7 +2,9 @@
 //
 // https://github.com/DevYeom/Coral
 
-import JSONFormatter
+import Factory
+import JSONFormatterContainer
+import JSONFormatterInterface
 import SwiftUI
 
 struct JSONFormatterExampleView: View {
@@ -15,9 +17,6 @@ struct JSONFormatterExampleView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            JSONFormatter.hello()
-        }
     }
 
 }

@@ -12,8 +12,9 @@ let project = Project.static(
     dependencies: [
         .common(.coralKit),
         .common(.coralUI),
-        .external(.dependencies),
+        .external(.factory),
         .external(.oneWay),
     ],
+    hasContainer: true,
     includeExample: true
 )

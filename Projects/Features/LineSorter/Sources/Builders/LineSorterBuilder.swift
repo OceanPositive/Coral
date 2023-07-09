@@ -2,17 +2,17 @@
 //
 // https://github.com/DevYeom/Coral
 
-import CoralKit
+import CoralUI
 import LineSorterInterface
 import SwiftUI
 
-public struct LineSorterBuilder: Buildable {
+public struct LineSorterBuilder: ViewBuildable {
 
     public init() {}
 
     public func callAsFunction(
         _ dependency: LineSorterDependency
-    ) -> LineSorterScreen {
+    ) -> AnyView {
         let way = LineSorterWay(
             initialState: .init(
                 input: "",
@@ -21,7 +21,7 @@ public struct LineSorterBuilder: Buildable {
                 orderType: .ordered
             )
         )
-        return LineSorterScreen(way: way)
+        return AnyView(LineSorterScreen(way: way))
     }
 
 }

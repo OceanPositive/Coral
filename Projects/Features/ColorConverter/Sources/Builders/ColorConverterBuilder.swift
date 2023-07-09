@@ -3,16 +3,16 @@
 // https://github.com/DevYeom/Coral
 
 import ColorConverterInterface
-import CoralKit
+import CoralUI
 import SwiftUI
 
-public struct ColorConverterBuilder: Buildable {
+public struct ColorConverterBuilder: ViewBuildable {
 
     public init() {}
 
     public func callAsFunction(
         _ dependency: ColorConverterDependency
-    ) -> ColorConverterScreen {
+    ) -> AnyView {
         let way = ColorConverterWay(
             initialState: .init(
                 sourceColor: .black,
@@ -21,7 +21,7 @@ public struct ColorConverterBuilder: Buildable {
                 hsb: HSBColor(hue: .zero, saturation: .zero, brightness: .zero)
             )
         )
-        return ColorConverterScreen(way: way)
+        return AnyView(ColorConverterScreen(way: way))
     }
 
 }

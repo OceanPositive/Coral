@@ -29,6 +29,7 @@ extension Array where Element == Target {
         sources: SourceFilesList?,
         resources: ResourceFileElements?,
         dependencies: [TargetDependency],
+        hasContainer: Bool,
         includeExample: Bool
     ) -> [Target] {
         var targets: [Target] = [
@@ -44,8 +45,12 @@ extension Array where Element == Target {
             .tests(name: name),
         ]
 
+        if hasContainer {
+            targets.append(.container(name: name))
+        }
+
         if includeExample {
-            targets.append(.example(name: name))
+            targets.append(.example(name: name, hasContainer: hasContainer))
         }
 
         return targets
@@ -173,6 +178,33 @@ extension Target {
         )
     }
 
+    fileprivate static func container(name: String) -> Self {
+        Target(
+            name: "\(name)Container",
+            platform: .macOS,
+            product: .framework,
+            productName: nil,
+            bundleId: Coral.bundleId("\(name)Container"),
+            deploymentTarget: .app,
+            infoPlist: .default,
+            sources: ["Container/**"],
+            resources: [],
+            copyFiles: nil,
+            headers: nil,
+            entitlements: nil,
+            scripts: [],
+            dependencies: [
+                .target(name: name),
+                .target(name: "\(name)Interface"),
+            ],
+            settings: .common(),
+            coreDataModels: [],
+            environment: [:],
+            launchArguments: [],
+            additionalFiles: []
+        )
+    }
+
     fileprivate static func tests(name: String) -> Self {
         Target(
             name: "\(name)Tests",
@@ -227,7 +259,7 @@ extension Target {
         )
     }
 
-    fileprivate static func example(name: String) -> Self {
+    fileprivate static func example(name: String, hasContainer: Bool) -> Self {
         Target(
             name: "\(name)Example",
             platform: .macOS,
@@ -242,10 +274,19 @@ extension Target {
             headers: nil,
             entitlements: nil,
             scripts: [],
-            dependencies: [
-                .target(name: name),
-                .target(name: "\(name)Testing"),
-            ],
+            dependencies: {
+                if hasContainer {
+                    return [
+                        .target(name: "\(name)Container"),
+                        .target(name: "\(name)Testing"),
+                    ]
+                } else {
+                    return [
+                        .target(name: name),
+                        .target(name: "\(name)Testing"),
+                    ]
+                }
+            }(),
             settings: .settings(),
             coreDataModels: [],
             environment: [:],

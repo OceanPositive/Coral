@@ -18,12 +18,17 @@ let project = Project.app(
     dependencies: [
         .common(.coralKit),
         .common(.coralUI),
-        .feature(.caseConverter),
-        .feature(.colorConverter),
-        .feature(.jsonFormatter),
-        .feature(.lineSorter),
-        .feature(.markdownPreview),
-        .external(.dependencies),
+        .external(.factory),
         .external(.oneWay),
+        .featureContainer(.caseConverter),
+        .featureContainer(.colorConverter),
+        .featureContainer(.jsonFormatter),
+        .featureContainer(.lineSorter),
+        .featureContainer(.markdownPreview),
+        .featureInterface(.caseConverter),
+        .featureInterface(.colorConverter),
+        .featureInterface(.jsonFormatter),
+        .featureInterface(.lineSorter),
+        .featureInterface(.markdownPreview),
     ]
 )

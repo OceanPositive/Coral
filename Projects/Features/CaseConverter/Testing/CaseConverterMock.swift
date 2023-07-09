@@ -5,7 +5,7 @@
 import CaseConverterInterface
 import Foundation
 
-public struct CaseConverterMock: CaseConverterType {
+public struct CaseConverterMock {
 
     public static func hello() {
         print("Hello CaseConverterMock")

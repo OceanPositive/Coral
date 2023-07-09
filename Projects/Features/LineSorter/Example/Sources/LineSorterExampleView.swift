@@ -2,7 +2,9 @@
 //
 // https://github.com/DevYeom/Coral
 
-import LineSorter
+import Factory
+import LineSorterContainer
+import LineSorterInterface
 import SwiftUI
 
 struct LineSorterExampleView: View {

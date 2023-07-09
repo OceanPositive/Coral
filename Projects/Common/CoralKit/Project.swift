@@ -10,5 +10,6 @@ let project = Project.dynamic(
     packages: [],
     baseSettings: [:],
     dependencies: [],
+    hasContainer: false,
     includeExample: true
 )

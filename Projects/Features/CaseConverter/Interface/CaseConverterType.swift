@@ -4,8 +4,12 @@
 
 import Foundation
 
-public protocol CaseConverterType {
+public enum CaseConverterType {
 
-    static func hello()
+    case snake
+    case camel
+    case pascal
+    case parameter
+    case constant
 
 }

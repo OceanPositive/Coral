@@ -51,6 +51,7 @@ public extension Project {
         sources: SourceFilesList? = ["Sources/**"],
         resources: ResourceFileElements? = ["Resources/**"],
         dependencies: [TargetDependency],
+        hasContainer: Bool,
         includeExample: Bool
     ) -> Self {
         return module(
@@ -65,6 +66,7 @@ public extension Project {
             sources: sources,
             resources: resources,
             dependencies: dependencies,
+            hasContainer: hasContainer,
             includeExample: includeExample
         )
     }
@@ -76,6 +78,7 @@ public extension Project {
         sources: SourceFilesList? = ["Sources/**"],
         resources: ResourceFileElements? = nil,
         dependencies: [TargetDependency],
+        hasContainer: Bool,
         includeExample: Bool
     ) -> Self {
         return module(
@@ -90,6 +93,7 @@ public extension Project {
             sources: sources,
             resources: resources,
             dependencies: dependencies,
+            hasContainer: hasContainer,
             includeExample: includeExample
         )
     }
@@ -102,6 +106,7 @@ public extension Project {
         sources: SourceFilesList?,
         resources: ResourceFileElements?,
         dependencies: [TargetDependency],
+        hasContainer: Bool,
         includeExample: Bool
     ) -> Self {
         return Project(
@@ -116,6 +121,7 @@ public extension Project {
                 sources: sources,
                 resources: resources,
                 dependencies: dependencies,
+                hasContainer: hasContainer,
                 includeExample: includeExample
             ),
             schemes: [
