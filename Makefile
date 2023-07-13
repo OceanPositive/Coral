@@ -6,6 +6,9 @@ install:
 uninstall:
 	@./scripts/uninstall.sh
 
+install-templates:
+	@./scripts/install-templates.sh
+
 clean:
 	@tuist clean
 
@@ -45,4 +48,4 @@ else
 	@echo "👉 make module name=Foo"
 endif
 
-.PHONY: install uninstall clean edit fetch project project-no-open lint ci module
+.PHONY: install uninstall install-templates clean edit fetch project project-no-open lint ci module
