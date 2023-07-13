@@ -8,6 +8,8 @@ import ColorConverterContainer
 import ColorConverterInterface
 import CoralKit
 import Factory
+import JSONFormatterContainer
+import JSONFormatterInterface
 import LineSorterContainer
 import LineSorterInterface
 import MarkdownPreview
@@ -21,6 +23,9 @@ struct FeatureList: View {
 
     @Injected(\ColorConverterContainer.colorConverterBuilder)
     private var colorConverterBuilder
+
+    @Injected(\JSONFormatterContainer.jsonFormatterBuilder)
+    private var jsonFormatterBuilder
 
     @Injected(\LineSorterContainer.lineSorterBuilder)
     private var lineSorterBuilder
@@ -78,6 +83,11 @@ struct FeatureList: View {
         case .colorConverter:
             colorConverterBuilder(
                 ColorConverterDependency(text: "TODO")
+            )
+
+        case .jsonFormatter:
+            jsonFormatterBuilder(
+                JSONFormatterDependency()
             )
 
         case .lineSorter:

@@ -2,6 +2,7 @@
 //
 // https://github.com/DevYeom/Coral
 
+import CoralUI
 import Factory
 import Foundation
 import JSONFormatter
@@ -15,5 +16,9 @@ public final class JSONFormatterContainer: SharedContainer {
 }
 
 extension JSONFormatterContainer {
+
+    public var jsonFormatterBuilder: Factory<AnyViewBuilder<JSONFormatterDependency>> {
+        self { AnyViewBuilder(JSONFormatterBuilder()) }
+    }
 
 }
