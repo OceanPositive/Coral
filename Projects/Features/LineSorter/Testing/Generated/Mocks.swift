@@ -12,7 +12,7 @@ public enum Mocks {
             import ABCD
             """
 
-        public static let alphabetically_ordered: String =
+        public static let alphabeticallyOrdered: String =
             """
             import ABCD
             import AppKit
@@ -22,7 +22,7 @@ public enum Mocks {
             import zyx
             """
 
-        public static let alphabetically_reversed: String =
+        public static let alphabeticallyReversed: String =
             """
             import zyx
             import OneWay
@@ -32,7 +32,7 @@ public enum Mocks {
             import ABCD
             """
 
-        public static let lenghtly_ordered: String =
+        public static let lenghtlyOrdered: String =
             """
             import zyx
             import ABCD
@@ -42,7 +42,7 @@ public enum Mocks {
             import Foundation
             """
 
-        public static let lenghtly_reversed: String =
+        public static let lenghtlyReversed: String =
             """
             import Foundation
             import CoralKit
@@ -66,7 +66,7 @@ public enum Mocks {
             Prefix-124
             """
 
-        public static let alphabetically_ordered: String =
+        public static let alphabeticallyOrdered: String =
             """
             Prefix-11111
             Prefix-123
@@ -76,7 +76,7 @@ public enum Mocks {
             Prefix-459595
             """
 
-        public static let alphabetically_reversed: String =
+        public static let alphabeticallyReversed: String =
             """
             Prefix-459595
             Prefix-235623
@@ -86,7 +86,7 @@ public enum Mocks {
             Prefix-11111
             """
 
-        public static let lenghtly_ordered: String =
+        public static let lenghtlyOrdered: String =
             """
             Prefix-123
             Prefix-124
@@ -96,7 +96,7 @@ public enum Mocks {
             Prefix-459595
             """
 
-        public static let lenghtly_reversed: String =
+        public static let lenghtlyReversed: String =
             """
             Prefix-459595
             Prefix-235623
