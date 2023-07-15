@@ -17,4 +17,8 @@ public final class MarkdownPreviewContainer: SharedContainer {
 
 extension MarkdownPreviewContainer {
 
+    public var markdownPreviewBuilder: Factory<AnyViewBuilder<MarkdownPreviewDependency>> {
+        self { AnyViewBuilder(MarkdownPreviewBuilder()) }
+    }
+
 }

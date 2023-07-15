@@ -25,6 +25,7 @@ public extension TargetDependency {
     enum External: String {
         case factory = "Factory"
         case oneWay = "OneWay"
+        case markdownUI = "MarkdownUI"
     }
 
 }

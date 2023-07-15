@@ -14,6 +14,7 @@ let project = Project.static(
         .common(.coralUI),
         .external(.factory),
         .external(.oneWay),
+        .external(.markdownUI),
     ],
     hasContainer: true,
     includeExample: true
