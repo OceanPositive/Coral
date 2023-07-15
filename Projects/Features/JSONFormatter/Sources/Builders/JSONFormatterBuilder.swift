@@ -14,7 +14,10 @@ public struct JSONFormatterBuilder: ViewBuildable {
         _ dependency: JSONFormatterDependency
     ) -> AnyView {
         let way = JSONFormatterWay(
-            initialState: .init(title: "")
+            initialState: .init(
+                input: "",
+                output: ""
+            )
         )
         return AnyView(JSONFormatterScreen(way: way))
     }
