@@ -1,10 +1,15 @@
-Resolves https://github.com/DevYeom/Coral/issues/YYY
+### Related Issues 💭
 
-### Added
+<!-- If an related issue doesn't exist, remove this section. -->
 
-### Changed
+### Description 🪸
 
-### Fixed
+<!-- Please include a summary of the changes or improvements you have made. -->
+
+### Additional Notes 📚
+
+<!-- Add any additional notes or context about the changes made. -->
+<!-- It can be included screenshots or images to visually demonstrate any UI-related changes. -->
 
 ### Checklist ✅
 
