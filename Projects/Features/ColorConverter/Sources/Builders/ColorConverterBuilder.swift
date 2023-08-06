@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// https://github.com/DevYeom/Coral
+// https://github.com/OceanPositive/Coral
 
 import ColorConverterInterface
 import CoralUI

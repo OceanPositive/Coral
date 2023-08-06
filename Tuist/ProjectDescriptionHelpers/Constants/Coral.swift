@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// https://github.com/DevYeom/Coral
+// https://github.com/OceanPositive/Coral
 
 import Foundation
 
@@ -10,7 +10,7 @@ public enum Coral {
     public static let fileHeader: String = """
     // The MIT License (MIT)
     //
-    // https://github.com/DevYeom/Coral
+    // https://github.com/OceanPositive/Coral
     """
 
     static func bundleId(_ value: String) -> String {
