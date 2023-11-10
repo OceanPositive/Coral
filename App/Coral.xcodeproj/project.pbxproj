@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3397E8E2AFD07AE001E595F /* CoralApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3397E8D2AFD07AE001E595F /* CoralApp.swift */; };
+		C3397E902AFD07AE001E595F /* CoralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3397E8F2AFD07AE001E595F /* CoralView.swift */; };
+		C3397E942AFD07AF001E595F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3397E932AFD07AF001E595F /* Assets.xcassets */; };
+		C346B80F2AFE237200CA188B /* FeatureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B80E2AFE237200CA188B /* FeatureList.swift */; };
+		C346B8112AFE23B000CA188B /* FeatureListWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B8102AFE23B000CA188B /* FeatureListWay.swift */; };
+		C346B8132AFE23C200CA188B /* CoralFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B8122AFE23C200CA188B /* CoralFeature.swift */; };
+		C346B8182AFE24A900CA188B /* CaseConverter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8172AFE24A900CA188B /* CaseConverter */; };
+		C346B81A2AFE24A900CA188B /* ColorConverter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8192AFE24A900CA188B /* ColorConverter */; };
+		C346B81C2AFE24A900CA188B /* CoralKit in Frameworks */ = {isa = PBXBuildFile; productRef = C346B81B2AFE24A900CA188B /* CoralKit */; };
+		C346B81E2AFE24A900CA188B /* CoralUI in Frameworks */ = {isa = PBXBuildFile; productRef = C346B81D2AFE24A900CA188B /* CoralUI */; };
+		C346B8202AFE24A900CA188B /* JSONFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B81F2AFE24A900CA188B /* JSONFormatter */; };
+		C346B8222AFE24A900CA188B /* LineSorter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8212AFE24A900CA188B /* LineSorter */; };
+		C346B8242AFE24A900CA188B /* MarkdownPreview in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8232AFE24A900CA188B /* MarkdownPreview */; };
+		C3CF6C672AFE504500555A25 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF6C662AFE504500555A25 /* Container.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3397E8A2AFD07AE001E595F /* Coral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coral.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3397E8D2AFD07AE001E595F /* CoralApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoralApp.swift; sourceTree = "<group>"; };
+		C3397E8F2AFD07AE001E595F /* CoralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoralView.swift; sourceTree = "<group>"; };
+		C3397E932AFD07AF001E595F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3397E952AFD07AF001E595F /* Coral.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coral.entitlements; sourceTree = "<group>"; };
+		C346B80D2AFE22D300CA188B /* Coral */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Coral; path = ..; sourceTree = "<group>"; };
+		C346B80E2AFE237200CA188B /* FeatureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureList.swift; sourceTree = "<group>"; };
+		C346B8102AFE23B000CA188B /* FeatureListWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureListWay.swift; sourceTree = "<group>"; };
+		C346B8122AFE23C200CA188B /* CoralFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoralFeature.swift; sourceTree = "<group>"; };
+		C3CF6C662AFE504500555A25 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3397E872AFD07AE001E595F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C346B81C2AFE24A900CA188B /* CoralKit in Frameworks */,
+				C346B8182AFE24A900CA188B /* CaseConverter in Frameworks */,
+				C346B8202AFE24A900CA188B /* JSONFormatter in Frameworks */,
+				C346B81E2AFE24A900CA188B /* CoralUI in Frameworks */,
+				C346B81A2AFE24A900CA188B /* ColorConverter in Frameworks */,
+				C346B8242AFE24A900CA188B /* MarkdownPreview in Frameworks */,
+				C346B8222AFE24A900CA188B /* LineSorter in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3397E812AFD07AE001E595F = {
+			isa = PBXGroup;
+			children = (
+				C346B80D2AFE22D300CA188B /* Coral */,
+				C3397E8C2AFD07AE001E595F /* macOS */,
+				C3397E8B2AFD07AE001E595F /* Products */,
+				C346B8162AFE24A900CA188B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C3397E8B2AFD07AE001E595F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3397E8A2AFD07AE001E595F /* Coral.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3397E8C2AFD07AE001E595F /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C3397E952AFD07AF001E595F /* Coral.entitlements */,
+				C3CF6C662AFE504500555A25 /* Container.swift */,
+				C3397E8D2AFD07AE001E595F /* CoralApp.swift */,
+				C346B8122AFE23C200CA188B /* CoralFeature.swift */,
+				C3397E8F2AFD07AE001E595F /* CoralView.swift */,
+				C346B80E2AFE237200CA188B /* FeatureList.swift */,
+				C346B8102AFE23B000CA188B /* FeatureListWay.swift */,
+				C3397E932AFD07AF001E595F /* Assets.xcassets */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		C346B8162AFE24A900CA188B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3397E892AFD07AE001E595F /* Coral */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3397E9B2AFD07AF001E595F /* Build configuration list for PBXNativeTarget "Coral" */;
+			buildPhases = (
+				C3397E862AFD07AE001E595F /* Sources */,
+				C3397E872AFD07AE001E595F /* Frameworks */,
+				C3397E882AFD07AE001E595F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coral;
+			packageProductDependencies = (
+				C346B8172AFE24A900CA188B /* CaseConverter */,
+				C346B8192AFE24A900CA188B /* ColorConverter */,
+				C346B81B2AFE24A900CA188B /* CoralKit */,
+				C346B81D2AFE24A900CA188B /* CoralUI */,
+				C346B81F2AFE24A900CA188B /* JSONFormatter */,
+				C346B8212AFE24A900CA188B /* LineSorter */,
+				C346B8232AFE24A900CA188B /* MarkdownPreview */,
+			);
+			productName = Coral;
+			productReference = C3397E8A2AFD07AE001E595F /* Coral.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3397E822AFD07AE001E595F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C3397E892AFD07AE001E595F = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = C3397E852AFD07AE001E595F /* Build configuration list for PBXProject "Coral" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3397E812AFD07AE001E595F;
+			productRefGroup = C3397E8B2AFD07AE001E595F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3397E892AFD07AE001E595F /* Coral */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3397E882AFD07AE001E595F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3397E942AFD07AF001E595F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3397E862AFD07AE001E595F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C346B8132AFE23C200CA188B /* CoralFeature.swift in Sources */,
+				C3CF6C672AFE504500555A25 /* Container.swift in Sources */,
+				C346B80F2AFE237200CA188B /* FeatureList.swift in Sources */,
+				C3397E902AFD07AE001E595F /* CoralView.swift in Sources */,
+				C346B8112AFE23B000CA188B /* FeatureListWay.swift in Sources */,
+				C3397E8E2AFD07AE001E595F /* CoralApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C3397E992AFD07AF001E595F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3397E9A2AFD07AF001E595F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C3397E9C2AFD07AF001E595F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/Coral.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = T42V7M748Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ocean-positive.coral";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C3397E9D2AFD07AF001E595F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/Coral.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = T42V7M748Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ocean-positive.coral";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3397E852AFD07AE001E595F /* Build configuration list for PBXProject "Coral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3397E992AFD07AF001E595F /* Debug */,
+				C3397E9A2AFD07AF001E595F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3397E9B2AFD07AF001E595F /* Build configuration list for PBXNativeTarget "Coral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3397E9C2AFD07AF001E595F /* Debug */,
+				C3397E9D2AFD07AF001E595F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C346B8172AFE24A900CA188B /* CaseConverter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CaseConverter;
+		};
+		C346B8192AFE24A900CA188B /* ColorConverter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ColorConverter;
+		};
+		C346B81B2AFE24A900CA188B /* CoralKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoralKit;
+		};
+		C346B81D2AFE24A900CA188B /* CoralUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoralUI;
+		};
+		C346B81F2AFE24A900CA188B /* JSONFormatter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JSONFormatter;
+		};
+		C346B8212AFE24A900CA188B /* LineSorter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LineSorter;
+		};
+		C346B8232AFE24A900CA188B /* MarkdownPreview */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MarkdownPreview;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C3397E822AFD07AE001E595F /* Project object */;
+}

@@ -1,51 +1,27 @@
 default: project
 
 install:
-	@./scripts/install.sh $(env)
+	@./Scripts/install.sh $(env)
 
 uninstall:
-	@./scripts/uninstall.sh
+	@./Scripts/uninstall.sh
 
 install-templates:
-	@./scripts/install-templates.sh
-
-clean:
-	@tuist clean
-
-edit:
-	@tuist edit --permanent
-	@open Manifests.xcodeproj
-
-fetch:
-	@tuist fetch
-
-project: fetch
-	@tuist generate
-
-project-no-open: fetch
-	@tuist generate --no-open
+	@./Scripts/install-templates.sh
 
 lint:
 # recursive
-	@swift-format lint -r Projects
+	@swift-format lint -r Sources
 # in place, recursive, parallel
-	@swift-format format -irp Projects
+	@swift-format format -irp Sources
 
 mocks:
-	@./scripts/mocking.sh
+	@./Scripts/mocking.sh
 	@make lint
 
-ci: env:=ci
+ci: env:=ci # To avoid installing swift-format
 
-ci: install project-no-open
+ci: install
 	@bundle exec fastlane ci
 
-module:
-ifdef name
-	@tuist scaffold module --name $(name) --example true
-else
-	@echo "Please make sure to specify a module's name like below"
-	@echo "👉 make module name=Foo"
-endif
-
-.PHONY: install uninstall install-templates clean edit fetch project project-no-open lint ci module
+.PHONY: install uninstall install-templates lint mocks ci

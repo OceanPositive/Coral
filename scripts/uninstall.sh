@@ -27,13 +27,6 @@ if ! [ -z "$(bundle list | grep fastlane)" ]; then
     __success "Fastlane is uninstalled."
 fi
 
-if [ -x "$(command -v tuist)" ]; then
-    __verbose "Uninstalling tuist..."
-    curl -Ls https://raw.githubusercontent.com/tuist/tuist/main/script/uninstall | bash
-    rm -rf /usr/local/bin/tuist
-    __success "Tuist is uninstalled."
-fi
-
 if [ -x "$(command -v mockolo)" ]; then
     __verbose "Uninstalling mockolo..."
     brew uninstall mockolo

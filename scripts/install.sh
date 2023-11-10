@@ -38,14 +38,6 @@ else
     __verbose "Fastlane is already installed."
 fi
 
-if ! [ -x "$(command -v tuist)" ]; then
-    __verbose "Installing tuist..."
-    curl -Ls https://install.tuist.io | bash
-    __success "Tuist is installed."
-else
-    __verbose "Tuist is already installed."
-fi
-
 if ! [ -x "$(command -v mockolo)" ]; then
     if [ "$ENV" != "ci" ]; then
         __verbose "Installing mockolo..."
