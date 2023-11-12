@@ -20,9 +20,11 @@ platform :mac do
   desc "CI"
   lane :ci do
     run_tests(
-      workspace: "Coral.xcworkspace",
-      scheme: "Coral-Workspace",
+      package_path: ".",
+      scheme: "Coral-Package",
       clean: true,
+      destination: "platform=macOS",
+      result_bundle: true,
     )
   end
 

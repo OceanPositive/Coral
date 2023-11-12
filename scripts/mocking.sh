@@ -20,14 +20,14 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 ROOT_DIR=$SCRIPT_DIR/..
 cd $ROOT_DIR
 
-COMMON_DIR="Projects/Common"
-FEATURES_DIR="Projects/Features"
+SOURCES_DIR="Sources"
+TESTS_DIR="Tests"
 MOCKS_FILE="Testing/Generated/Mocks.swift"
 
 ITEMS=( \
-    "CoralKit,${COMMON_DIR}/CoralKit/Interface,${COMMON_DIR}/CoralKit/${MOCKS_FILE}" \
-    "CoralUI,${COMMON_DIR}/CoralUI/Interface,${COMMON_DIR}/CoralUI/${MOCKS_FILE}" \
-    "ColorConverter,${FEATURES_DIR}/ColorConverter/Interface,${FEATURES_DIR}/ColorConverter/${MOCKS_FILE}" \
+    "CoralKit,${SOURCES_DIR}/CoralKit,${TESTS_DIR}/CoralKitTests/${MOCKS_FILE}" \
+    "CoralUI,${SOURCES_DIR}/CoralUI,${TESTS_DIR}/CoralUITests/${MOCKS_FILE}" \
+    "ColorConverter,${SOURCES_DIR}/ColorConverter,${TESTS_DIR}/ColorConverterTests/${MOCKS_FILE}" \
 )
 
 if [ -x "$(command -v mockolo)" ]; then
@@ -37,13 +37,14 @@ if [ -x "$(command -v mockolo)" ]; then
         mockolo \
         --sourcedirs $interface \
         --destination $mocks \
-        --custom-imports "${name}Interface" \
+        --custom-imports "${name}" \
         --logging-level 3 \
         --mock-final
         sed -i '' '1 i \
 // swift-format-ignore-file
 ' ./$mocks
     done
+    __success "Generating mocks is complete"
 else
     __fail "mockolo is not installed"
 fi
