@@ -6,7 +6,7 @@ import CoralKit
 import Foundation
 import OneWay
 
-public final class CaseConverterWay: Way<CaseConverterWay.Action, CaseConverterWay.State> {
+public final class CaseConverterReducer: Reducer {
     public enum Action {
         case edit(input: String)
         case convert
@@ -30,11 +30,7 @@ public final class CaseConverterWay: Way<CaseConverterWay.Action, CaseConverterW
         }
     }
 
-    public init(initialState: State) {
-        super.init(initialState: initialState)
-    }
-
-    public override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    public func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case let .edit(input):
             state.input = input

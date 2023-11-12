@@ -3,6 +3,7 @@
 // https://github.com/OceanPositive/Coral
 
 import SwiftUI
+import OneWay
 
 struct CoralView: View {
     var body: some View {
@@ -12,15 +13,16 @@ struct CoralView: View {
         }
     }
 
+    @MainActor
     var featureList: some View {
-        FeatureList(
-            way: .init(
-                initialState: .init(
-                    features: CoralFeature.allCases,
-                    searchText: ""
-                )
+        let store = ViewStore(
+            reducer: FeatureListReducer(),
+            state: .init(
+                features: CoralFeature.allCases,
+                searchText: ""
             )
         )
+        return FeatureList(store: store)
     }
 }
 

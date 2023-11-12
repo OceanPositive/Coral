@@ -2,13 +2,14 @@
 //
 // https://github.com/OceanPositive/Coral
 
+import OneWay
 import SwiftUI
 
 public struct ColorConverterScreen: View {
-    @StateObject private var way: ColorConverterWay
+    @StateObject private var store: ViewStore<ColorConverterReducer>
 
-    init(way: ColorConverterWay) {
-        self._way = StateObject(wrappedValue: way)
+    init(store: ViewStore<ColorConverterReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     public var body: some View {
@@ -51,15 +52,15 @@ public struct ColorConverterScreen: View {
     private var colorSlider: some View {
         HStack {
             Color(
-                red: way.state.red,
-                green: way.state.green,
-                blue: way.state.blue
+                red: store.state.red,
+                green: store.state.green,
+                blue: store.state.blue
             )
             VStack {
                 Slider(
                     value: Binding<Double>(
-                        get: { way.state.red },
-                        set: { way.send(.setRed($0)) }
+                        get: { store.state.red },
+                        set: { store.send(.setRed($0)) }
                     ),
                     in: Double.zero ... 1.0
                 )
@@ -67,8 +68,8 @@ public struct ColorConverterScreen: View {
 
                 Slider(
                     value: Binding<Double>(
-                        get: { way.state.green },
-                        set: { way.send(.setGreen($0)) }
+                        get: { store.state.green },
+                        set: { store.send(.setGreen($0)) }
                     ),
                     in: Double.zero ... 1.0
                 )
@@ -76,8 +77,8 @@ public struct ColorConverterScreen: View {
 
                 Slider(
                     value: Binding<Double>(
-                        get: { way.state.blue },
-                        set: { way.send(.setBlue($0)) }
+                        get: { store.state.blue },
+                        set: { store.send(.setBlue($0)) }
                     ),
                     in: Double.zero ... 1.0
                 )
@@ -92,24 +93,24 @@ public struct ColorConverterScreen: View {
                 TextField(
                     "R",
                     text: Binding<String>(
-                        get: { multiplyForRGB(way.state.red) },
-                        set: { way.send(.setRed(divideForRGB($0))) }
+                        get: { multiplyForRGB(store.state.red) },
+                        set: { store.send(.setRed(divideForRGB($0))) }
                     ),
                     prompt: Text("0 ~ 255")
                 )
                 TextField(
                     "G",
                     text: Binding<String>(
-                        get: { multiplyForRGB(way.state.green) },
-                        set: { way.send(.setGreen(divideForRGB($0))) }
+                        get: { multiplyForRGB(store.state.green) },
+                        set: { store.send(.setGreen(divideForRGB($0))) }
                     ),
                     prompt: Text("0 ~ 255")
                 )
                 TextField(
                     "B",
                     text: Binding<String>(
-                        get: { multiplyForRGB(way.state.blue) },
-                        set: { way.send(.setBlue(divideForRGB($0))) }
+                        get: { multiplyForRGB(store.state.blue) },
+                        set: { store.send(.setBlue(divideForRGB($0))) }
                     ),
                     prompt: Text("0 ~ 255")
                 )
@@ -121,8 +122,8 @@ public struct ColorConverterScreen: View {
         TextField(
             "HEX",
             text: Binding<String>(
-                get: { way.state.hex.value },
-                set: { way.send(.setHex($0)) }
+                get: { store.state.hex.value },
+                set: { store.send(.setHex($0)) }
             )
         )
     }
@@ -133,32 +134,32 @@ public struct ColorConverterScreen: View {
                 TextField(
                     "C",
                     text: Binding<String>(
-                        get: { withPercent(way.state.cmyk.cyan) },
-                        set: { way.send(.setCyan(excludePercent($0))) }
+                        get: { withPercent(store.state.cmyk.cyan) },
+                        set: { store.send(.setCyan(excludePercent($0))) }
                     ),
                     prompt: Text("0 ~ 100")
                 )
                 TextField(
                     "M",
                     text: Binding<String>(
-                        get: { withPercent(way.state.cmyk.magenta) },
-                        set: { way.send(.setMagenta(excludePercent($0))) }
+                        get: { withPercent(store.state.cmyk.magenta) },
+                        set: { store.send(.setMagenta(excludePercent($0))) }
                     ),
                     prompt: Text("0 ~ 100")
                 )
                 TextField(
                     "Y",
                     text: Binding<String>(
-                        get: { withPercent(way.state.cmyk.yellow) },
-                        set: { way.send(.setYellow(excludePercent($0))) }
+                        get: { withPercent(store.state.cmyk.yellow) },
+                        set: { store.send(.setYellow(excludePercent($0))) }
                     ),
                     prompt: Text("0 ~ 100")
                 )
                 TextField(
                     "K",
                     text: Binding<String>(
-                        get: { withPercent(way.state.cmyk.key) },
-                        set: { way.send(.setKey(excludePercent($0))) }
+                        get: { withPercent(store.state.cmyk.key) },
+                        set: { store.send(.setKey(excludePercent($0))) }
                     ),
                     prompt: Text("0 ~ 100")
                 )
@@ -172,24 +173,24 @@ public struct ColorConverterScreen: View {
                 TextField(
                     "H",
                     text: Binding<String>(
-                        get: { withRoundTwoDecimal(way.state.hsb.hue) },
-                        set: { way.send(.setHue(Double($0) ?? .zero)) }
+                        get: { withRoundTwoDecimal(store.state.hsb.hue) },
+                        set: { store.send(.setHue(Double($0) ?? .zero)) }
                     ),
                     prompt: Text("0 ~ 1.0")
                 )
                 TextField(
                     "S",
                     text: Binding<String>(
-                        get: { withRoundTwoDecimal(way.state.hsb.saturation) },
-                        set: { way.send(.setSaturation(Double($0) ?? .zero)) }
+                        get: { withRoundTwoDecimal(store.state.hsb.saturation) },
+                        set: { store.send(.setSaturation(Double($0) ?? .zero)) }
                     ),
                     prompt: Text("0 ~ 1.0")
                 )
                 TextField(
                     "B",
                     text: Binding<String>(
-                        get: { withRoundTwoDecimal(way.state.hsb.brightness) },
-                        set: { way.send(.setBrightness(Double($0) ?? .zero)) }
+                        get: { withRoundTwoDecimal(store.state.hsb.brightness) },
+                        set: { store.send(.setBrightness(Double($0) ?? .zero)) }
                     ),
                     prompt: Text("0 ~ 1.0")
                 )
@@ -218,16 +219,15 @@ public struct ColorConverterScreen: View {
     }
 }
 
-struct ColorConverterView_Previews: PreviewProvider {
-    static var previews: some View {
-        let way = ColorConverterWay(
-            initialState: .init(
-                sourceColor: .black,
-                hex: HexColor(value: "#000000"),
-                cmyk: CMYKColor(cyan: .zero, magenta: .zero, yellow: .zero, key: 1.0),
-                hsb: HSBColor(hue: .zero, saturation: .zero, brightness: .zero)
-            )
+#Preview{
+    let store = ViewStore(
+        reducer: ColorConverterReducer(),
+        state: .init(
+            sourceColor: .black,
+            hex: HexColor(value: "#000000"),
+            cmyk: CMYKColor(cyan: .zero, magenta: .zero, yellow: .zero, key: 1.0),
+            hsb: HSBColor(hue: .zero, saturation: .zero, brightness: .zero)
         )
-        return ColorConverterScreen(way: way)
-    }
+    )
+    return ColorConverterScreen(store: store)
 }

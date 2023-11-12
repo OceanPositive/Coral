@@ -6,7 +6,7 @@ import CoralKit
 import Foundation
 import OneWay
 
-final class LineSorterWay: Way<LineSorterWay.Action, LineSorterWay.State> {
+final class LineSorterReducer: Reducer {
     enum Action {
         case edit(input: String)
         case convert
@@ -22,7 +22,7 @@ final class LineSorterWay: Way<LineSorterWay.Action, LineSorterWay.State> {
         var orderType: OrderType
     }
 
-    override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case let .edit(input):
             state.input = input

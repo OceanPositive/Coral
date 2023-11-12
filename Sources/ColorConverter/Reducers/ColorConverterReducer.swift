@@ -5,7 +5,7 @@
 import Foundation
 import OneWay
 
-final class ColorConverterWay: Way<ColorConverterWay.Action, ColorConverterWay.State> {
+final class ColorConverterReducer: Reducer {
     enum Action {
         case setSourceColor(RGBColor)
         case setRed(Double)
@@ -37,7 +37,7 @@ final class ColorConverterWay: Way<ColorConverterWay.Action, ColorConverterWay.S
         var isValidHSB: Bool { hsb.isValid }
     }
 
-    override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case .setSourceColor(let sourceColor):
             state.sourceColor = sourceColor

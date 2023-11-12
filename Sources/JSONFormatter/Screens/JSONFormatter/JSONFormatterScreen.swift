@@ -7,10 +7,10 @@ import OneWay
 import SwiftUI
 
 public struct JSONFormatterScreen: View {
-    @StateObject private var way: JSONFormatterWay
+    @StateObject private var store: ViewStore<JSONFormatterReducer>
 
-    public init(way: JSONFormatterWay) {
-        self._way = StateObject<JSONFormatterWay>(wrappedValue: way)
+    public init(store: ViewStore<JSONFormatterReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     public var body: some View {
@@ -37,8 +37,8 @@ public struct JSONFormatterScreen: View {
     var inputEditor: some View {
         TextEditor(
             text: Binding<String>(
-                get: { way.state.input },
-                set: { way.send(.edit(input: $0)) }
+                get: { store.state.input },
+                set: { store.send(.edit(input: $0)) }
             )
         )
         .font(.body)
@@ -52,7 +52,7 @@ public struct JSONFormatterScreen: View {
     var outputText: some View {
         ScrollView(.vertical) {
             VStack(spacing: .zero) {
-                Text(way.state.output)
+                Text(store.state.output)
                     .textSelection(.enabled)
                     .font(.body)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -69,21 +69,19 @@ public struct JSONFormatterScreen: View {
 
     var copyButton: some View {
         CopyButton {
-            way.send(.copyOutput)
+            store.send(.copyOutput)
         }
         .padding(24)
     }
 }
 
-struct JSONFormatterScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        JSONFormatterScreen(
-            way: JSONFormatterWay(
-                initialState: .init(
-                    input: "",
-                    output: ""
-                )
-            )
+#Preview{
+    let store = ViewStore(
+        reducer: JSONFormatterReducer(),
+        state: .init(
+            input: "",
+            output: ""
         )
-    }
+    )
+    return JSONFormatterScreen(store: store)
 }

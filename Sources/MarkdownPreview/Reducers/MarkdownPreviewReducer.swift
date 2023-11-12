@@ -6,7 +6,7 @@ import CoralKit
 import Foundation
 import OneWay
 
-final class MarkdownPreviewWay: Way<MarkdownPreviewWay.Action, MarkdownPreviewWay.State> {
+final class MarkdownPreviewReducer: Reducer {
     enum Action {
         case edit(input: String)
     }
@@ -15,7 +15,7 @@ final class MarkdownPreviewWay: Way<MarkdownPreviewWay.Action, MarkdownPreviewWa
         var input: String
     }
 
-    override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case let .edit(input):
             state.input = input

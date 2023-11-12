@@ -3,13 +3,14 @@
 // https://github.com/OceanPositive/Coral
 
 import MarkdownUI
+import OneWay
 import SwiftUI
 
 public struct MarkdownPreviewScreen: View {
-    @StateObject private var way: MarkdownPreviewWay
+    @StateObject private var store: ViewStore<MarkdownPreviewReducer>
 
-    init(way: MarkdownPreviewWay) {
-        self._way = StateObject(wrappedValue: way)
+    init(store: ViewStore<MarkdownPreviewReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     public var body: some View {
@@ -34,8 +35,8 @@ public struct MarkdownPreviewScreen: View {
     var inputEditor: some View {
         TextEditor(
             text: Binding<String>(
-                get: { way.state.input },
-                set: { way.send(.edit(input: $0)) }
+                get: { store.state.input },
+                set: { store.send(.edit(input: $0)) }
             )
         )
         .font(.body)
@@ -48,18 +49,17 @@ public struct MarkdownPreviewScreen: View {
 
     var markdownView: some View {
         ScrollView {
-            Markdown(way.state.input)
+            Markdown(store.state.input)
                 .markdownTheme(.basic)
                 .padding(24)
         }
     }
 }
 
-struct MarkdownPreviewScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        let way = MarkdownPreviewWay(
-            initialState: .init(input: "")
-        )
-        return MarkdownPreviewScreen(way: way)
-    }
+#Preview{
+    let store = ViewStore(
+        reducer: MarkdownPreviewReducer(),
+        state: .init(input: "")
+    )
+    return MarkdownPreviewScreen(store: store)
 }

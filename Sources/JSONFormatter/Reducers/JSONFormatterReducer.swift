@@ -6,7 +6,7 @@ import CoralKit
 import Foundation
 import OneWay
 
-public final class JSONFormatterWay: Way<JSONFormatterWay.Action, JSONFormatterWay.State> {
+public final class JSONFormatterReducer: Reducer {
     public enum Action {
         case edit(input: String)
         case convert
@@ -26,7 +26,7 @@ public final class JSONFormatterWay: Way<JSONFormatterWay.Action, JSONFormatterW
         }
     }
 
-    public override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    public func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case let .edit(input):
             state.input = input

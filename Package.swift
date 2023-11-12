@@ -10,7 +10,7 @@ let package = Package(
     products: Module.allCases.map { $0.library },
     dependencies: [
         .package(url: "https://github.com/hmlongco/Factory.git", from: "2.0.0"),
-        .package(url: "https://github.com/DevYeom/OneWay.git", from: "1.0.0"),
+        .package(url: "https://github.com/DevYeom/OneWay.git", from: "2.0.0"),
         .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", from: "2.0.0"),
     ],
     targets: Module.allCases.flatMap { $0.targets }

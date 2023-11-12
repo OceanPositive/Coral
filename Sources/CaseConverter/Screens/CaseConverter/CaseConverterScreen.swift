@@ -8,10 +8,10 @@ import OneWay
 import SwiftUI
 
 public struct CaseConverterScreen: View {
-    @StateObject private var way: CaseConverterWay
+    @StateObject private var store: ViewStore<CaseConverterReducer>
 
-    public init(way: CaseConverterWay) {
-        self._way = StateObject<CaseConverterWay>(wrappedValue: way)
+    public init(store: ViewStore<CaseConverterReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     public var body: some View {
@@ -49,11 +49,11 @@ public struct CaseConverterScreen: View {
         Toggle(
             type.title,
             isOn: Binding<Bool>(
-                get: { way.state.converterType == type },
+                get: { store.state.converterType == type },
                 set: { value in
                     guard value else { return }
                     withAnimation {
-                        way.send(.updateType(type: type))
+                        store.send(.updateType(type: type))
                     }
                 }
             )
@@ -64,8 +64,8 @@ public struct CaseConverterScreen: View {
     var inputEditor: some View {
         TextEditor(
             text: Binding<String>(
-                get: { way.state.input },
-                set: { way.send(.edit(input: $0)) }
+                get: { store.state.input },
+                set: { store.send(.edit(input: $0)) }
             )
         )
         .font(.body)
@@ -79,7 +79,7 @@ public struct CaseConverterScreen: View {
     var outputText: some View {
         ScrollView(.vertical) {
             VStack(spacing: .zero) {
-                Text(way.state.output)
+                Text(store.state.output)
                     .textSelection(.enabled)
                     .font(.body)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -96,16 +96,20 @@ public struct CaseConverterScreen: View {
 
     var copyButton: some View {
         CopyButton {
-            way.send(.copyOutput)
+            store.send(.copyOutput)
         }
         .padding(24)
     }
 }
 
-struct CaseConverterScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CaseConverterScreen(
-            way: .init(initialState: .init(input: "", output: "", converterType: .camel))
+#Preview{
+    let store = ViewStore(
+        reducer: CaseConverterReducer(),
+        state: .init(
+            input: "",
+            output: "",
+            converterType: .camel
         )
-    }
+    )
+    return CaseConverterScreen(store: store)
 }
