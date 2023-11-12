@@ -11,7 +11,7 @@
 		C3397E902AFD07AE001E595F /* CoralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3397E8F2AFD07AE001E595F /* CoralView.swift */; };
 		C3397E942AFD07AF001E595F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3397E932AFD07AF001E595F /* Assets.xcassets */; };
 		C346B80F2AFE237200CA188B /* FeatureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B80E2AFE237200CA188B /* FeatureList.swift */; };
-		C346B8112AFE23B000CA188B /* FeatureListWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B8102AFE23B000CA188B /* FeatureListWay.swift */; };
+		C346B8112AFE23B000CA188B /* FeatureListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B8102AFE23B000CA188B /* FeatureListReducer.swift */; };
 		C346B8132AFE23C200CA188B /* CoralFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346B8122AFE23C200CA188B /* CoralFeature.swift */; };
 		C346B8182AFE24A900CA188B /* CaseConverter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8172AFE24A900CA188B /* CaseConverter */; };
 		C346B81A2AFE24A900CA188B /* ColorConverter in Frameworks */ = {isa = PBXBuildFile; productRef = C346B8192AFE24A900CA188B /* ColorConverter */; };
@@ -31,9 +31,10 @@
 		C3397E952AFD07AF001E595F /* Coral.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coral.entitlements; sourceTree = "<group>"; };
 		C346B80D2AFE22D300CA188B /* Coral */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Coral; path = ..; sourceTree = "<group>"; };
 		C346B80E2AFE237200CA188B /* FeatureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureList.swift; sourceTree = "<group>"; };
-		C346B8102AFE23B000CA188B /* FeatureListWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureListWay.swift; sourceTree = "<group>"; };
+		C346B8102AFE23B000CA188B /* FeatureListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureListReducer.swift; sourceTree = "<group>"; };
 		C346B8122AFE23C200CA188B /* CoralFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoralFeature.swift; sourceTree = "<group>"; };
 		C3CF6C662AFE504500555A25 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		C3F913AC2B00A9B300D70745 /* Coral.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Coral.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		C3397E812AFD07AE001E595F = {
 			isa = PBXGroup;
 			children = (
+				C3F913AC2B00A9B300D70745 /* Coral.xctestplan */,
 				C346B80D2AFE22D300CA188B /* Coral */,
 				C3397E8C2AFD07AE001E595F /* macOS */,
 				C3397E8B2AFD07AE001E595F /* Products */,
@@ -81,7 +83,7 @@
 				C346B8122AFE23C200CA188B /* CoralFeature.swift */,
 				C3397E8F2AFD07AE001E595F /* CoralView.swift */,
 				C346B80E2AFE237200CA188B /* FeatureList.swift */,
-				C346B8102AFE23B000CA188B /* FeatureListWay.swift */,
+				C346B8102AFE23B000CA188B /* FeatureListReducer.swift */,
 				C3397E932AFD07AF001E595F /* Assets.xcassets */,
 			);
 			path = macOS;
@@ -176,7 +178,7 @@
 				C3CF6C672AFE504500555A25 /* Container.swift in Sources */,
 				C346B80F2AFE237200CA188B /* FeatureList.swift in Sources */,
 				C3397E902AFD07AE001E595F /* CoralView.swift in Sources */,
-				C346B8112AFE23B000CA188B /* FeatureListWay.swift in Sources */,
+				C346B8112AFE23B000CA188B /* FeatureListReducer.swift in Sources */,
 				C3397E8E2AFD07AE001E595F /* CoralApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

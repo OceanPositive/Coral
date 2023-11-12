@@ -3,13 +3,14 @@
 // https://github.com/OceanPositive/Coral
 
 import CoralUI
+import OneWay
 import SwiftUI
 
 public struct LineSorterScreen: View {
-    @StateObject private var way: LineSorterWay
+    @StateObject private var store: ViewStore<LineSorterReducer>
 
-    init(way: LineSorterWay) {
-        self._way = StateObject(wrappedValue: way)
+    init(store: ViewStore<LineSorterReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     public var body: some View {
@@ -43,11 +44,8 @@ public struct LineSorterScreen: View {
         Picker(
             "Type",
             selection: Binding<LineSortType>(
-                get: { way.state.lineSortType },
-                set: {
-                    print($0)
-                    way.send(.updateSortType(type: $0))
-                }
+                get: { store.state.lineSortType },
+                set: { store.send(.updateSortType(type: $0)) }
             )
         ) {
             ForEach(LineSortType.allCases) {
@@ -64,8 +62,8 @@ public struct LineSorterScreen: View {
         Picker(
             "Order",
             selection: Binding<OrderType>(
-                get: { way.state.orderType },
-                set: { way.send(.updateOrderType(type: $0)) }
+                get: { store.state.orderType },
+                set: { store.send(.updateOrderType(type: $0)) }
             )
         ) {
             ForEach(OrderType.allCases) {
@@ -80,8 +78,8 @@ public struct LineSorterScreen: View {
     var inputEditor: some View {
         TextEditor(
             text: Binding<String>(
-                get: { way.state.input },
-                set: { way.send(.edit(input: $0)) }
+                get: { store.state.input },
+                set: { store.send(.edit(input: $0)) }
             )
         )
         .font(.body)
@@ -95,7 +93,7 @@ public struct LineSorterScreen: View {
     var outputText: some View {
         ScrollView(.vertical) {
             VStack(spacing: .zero) {
-                Text(way.state.output)
+                Text(store.state.output)
                     .textSelection(.enabled)
                     .font(.body)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -112,22 +110,21 @@ public struct LineSorterScreen: View {
 
     var copyButton: some View {
         CopyButton {
-            way.send(.copyOutput)
+            store.send(.copyOutput)
         }
         .padding(24)
     }
 }
 
-struct LineSorterScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        let way = LineSorterWay(
-            initialState: .init(
-                input: "",
-                output: "",
-                lineSortType: .alphabetically,
-                orderType: .ordered
-            )
+#Preview{
+    let store = ViewStore(
+        reducer: LineSorterReducer(),
+        state: .init(
+            input: "",
+            output: "",
+            lineSortType: .alphabetically,
+            orderType: .ordered
         )
-        return LineSorterScreen(way: way)
-    }
+    )
+    return LineSorterScreen(store: store)
 }

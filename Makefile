@@ -14,6 +14,7 @@ lint:
 	@swift-format lint -r Sources
 # in place, recursive, parallel
 	@swift-format format -irp Sources
+	@echo "swift-format completed."
 
 mocks:
 	@./Scripts/mocking.sh

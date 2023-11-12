@@ -1,0 +1,71 @@
+{
+  "configurations" : [
+    {
+      "id" : "3B2C9D31-3D67-4656-AD0C-217141EEFB81",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Coral.xcodeproj",
+      "identifier" : "C3397E892AFD07AE001E595F",
+      "name" : "Coral"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "CaseConverterTests",
+        "name" : "CaseConverterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "ColorConverterTests",
+        "name" : "ColorConverterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "CoralKitTests",
+        "name" : "CoralKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "CoralUITests",
+        "name" : "CoralUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "JSONFormatterTests",
+        "name" : "JSONFormatterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "LineSorterTests",
+        "name" : "LineSorterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "MarkdownPreviewTests",
+        "name" : "MarkdownPreviewTests"
+      }
+    }
+  ],
+  "version" : 1
+}

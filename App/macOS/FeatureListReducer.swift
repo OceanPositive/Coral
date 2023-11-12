@@ -5,7 +5,7 @@
 import Foundation
 import OneWay
 
-final class FeatureListWay: Way<FeatureListWay.Action, FeatureListWay.State> {
+final class FeatureListReducer: Reducer {
     enum Action {
         case search(String)
         case select(CoralFeature?)
@@ -17,11 +17,7 @@ final class FeatureListWay: Way<FeatureListWay.Action, FeatureListWay.State> {
         var searchText: String
     }
 
-    init(initialState: State) {
-        super.init(initialState: initialState)
-    }
-
-    override func reduce(state: inout State, action: Action) -> SideWay<Action, Never> {
+    func reduce(state: inout State, action: Action) -> AnyEffect<Action> {
         switch action {
         case let .search(input):
             state.searchText = input
@@ -35,7 +31,7 @@ final class FeatureListWay: Way<FeatureListWay.Action, FeatureListWay.State> {
     }
 }
 
-extension FeatureListWay {
+extension FeatureListReducer {
     fileprivate func searchedFeatures(input: String) -> [CoralFeature] {
         guard !input.isEmpty else {
             return CoralFeature.allCases

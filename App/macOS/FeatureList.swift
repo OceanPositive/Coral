@@ -10,6 +10,7 @@ import JSONFormatter
 import LineSorter
 import MarkdownPreview
 import SwiftUI
+import OneWay
 
 struct FeatureList: View {
     @Injected(\.caseConverterBuilder) private var caseConverterBuilder
@@ -18,24 +19,24 @@ struct FeatureList: View {
     @Injected(\.lineSorterBuilder) private var lineSorterBuilder
     @Injected(\.markdownPreviewBuilder) private var markdownPreviewBuilder
 
-    @StateObject private var way: FeatureListWay
+    @StateObject private var store: ViewStore<FeatureListReducer>
 
-    init(way: FeatureListWay) {
-        self._way = .init(wrappedValue: way)
+    init(store: ViewStore<FeatureListReducer>) {
+        self._store = StateObject(wrappedValue: store)
     }
 
     var title: String {
-        way.state.selectedFeature?.title ?? Constants.appName
+        store.state.selectedFeature?.title ?? Constants.appName
     }
 
     var body: some View {
         List(
             selection: Binding<CoralFeature?>(
-                get: { way.state.selectedFeature },
-                set: { way.send(.select($0)) }
+                get: { store.state.selectedFeature },
+                set: { store.send(.select($0)) }
             )
         ) {
-            ForEach(way.state.features) { feature in
+            ForEach(store.state.features) { feature in
                 NavigationLink {
                     makeFeatureScreen(feature)
                 } label: {
@@ -48,8 +49,8 @@ struct FeatureList: View {
         .frame(minWidth: 200)
         .searchable(
             text: Binding<String>(
-                get: { way.state.searchText },
-                set: { way.send(.search($0)) }
+                get: { store.state.searchText },
+                set: { store.send(.search($0)) }
             ),
             placement: .sidebar,
             prompt: "Search"
@@ -93,5 +94,12 @@ struct FeatureList: View {
 }
 
 #Preview {
-    FeatureList(way: .init(initialState: .init(features: [], searchText: "")))
+    let store = ViewStore(
+        reducer: FeatureListReducer(),
+        state: .init(
+            features: CoralFeature.allCases,
+            searchText: ""
+        )
+    )
+    return FeatureList(store: store)
 }
